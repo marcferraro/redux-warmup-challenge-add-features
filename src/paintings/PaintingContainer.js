@@ -34,7 +34,7 @@ class PaintingContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  paintings: state.paintings,
+  paintings: state.paintings.filter(painting => painting.museum.name.includes(state.filterTerm)),
   activePainting: state.paintings.find(p => p.id === state.activePaintingId)
 });
 
